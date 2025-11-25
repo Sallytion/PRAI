@@ -5,8 +5,7 @@ pydantic>=2.9.0
 pydantic-settings>=2.5.2
 
 # Multi-Agent Framework
-crewai>=0.86.0
-crewai[google]>=0.86.0
+crewai[google-genai]>=0.86.0
 langchain>=0.3.0
 langchain-google-genai>=2.0.0
 langchain-core>=0.3.0
