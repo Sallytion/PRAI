@@ -9,8 +9,10 @@ let state = {
     currentReview: null
 };
 
-// API Base URL
-const API_BASE = 'http://localhost:8000';
+// API Base URL - Use current domain in production, localhost in development
+const API_BASE = window.location.hostname === 'localhost' 
+    ? 'http://localhost:8000' 
+    : window.location.origin;
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
