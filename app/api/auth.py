@@ -77,9 +77,10 @@ async def github_callback(request: Request):
             data={"sub": str(user.id), "github_id": user.github_id}
         )
         
-        # Redirect to frontend with token
+        # Redirect to frontend with token - use configured base URL
+        frontend_url = settings.WEBHOOK_BASE_URL if settings.ENVIRONMENT == "production" else "http://localhost:8000"
         return RedirectResponse(
-            url=f"http://localhost:8000/?token={access_token}",
+            url=f"{frontend_url}/?token={access_token}",
             status_code=status.HTTP_303_SEE_OTHER
         )
         
